@@ -27,6 +27,25 @@ ___
 מערכים 
 $a, b$
 #### פלט:
+מכפלה פנימית של $a$ ו- $b$ֿ.
+### הערה:
+בשאלה זו כדי להשתמש בפונקציות הבאות:
+```Haskell 
+bounds :: (IArray a e, Ix i) => a i e -> (i, i)
+```
+```Haskell 
+(!) :: (IArray a e, Ix i) => a i e -> i -> e
+```
+___
+### שאלה 3.
+
+כתבו את הפונקציה הבאה:
+#### קלט:
+שני
+`UArray Int Double`
+מערכים 
+$a, b$
+#### פלט:
 מערך 
 `UArray Int Double`
 המכיל את הסכום של $a$ ו- $b$ֿ.
@@ -52,7 +71,7 @@ bounds :: (IArray a e, Ix i) => a i e -> (i, i)
 forM_ :: (Foldable t, Monad m) => t a -> (a -> m b) -> m ()
 ```
 ___
-### שאלה 3.
+### שאלה 4.
 
 כתבו את הפונקציה הבאה:
 #### קלט:
@@ -92,7 +111,7 @@ forM_ :: (Foldable t, Monad m) => t a -> (a -> m b) -> m ()
 forM :: (Traversable t, Monad m) => t a -> (a -> m b) -> m (t b)
 ```
 ___
-### שאלה 4.
+### שאלה 5.
 
 כתבו את הפונקציה הבאה:
 #### קלט:
