@@ -63,7 +63,7 @@ $v$
 כמערך
 `UArray Int Double`
 #### פלט:
-מכםלה
+מכפלה
 $A \cdot v$
 כמערך
 `UArray Int Double`
