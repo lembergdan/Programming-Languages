@@ -52,4 +52,43 @@ bounds :: (IArray a e, Ix i) => a i e -> (i, i)
 forM_ :: (Foldable t, Monad m) => t a -> (a -> m b) -> m ()
 ```
 ___
-### שאלה 2
+### שאלה 3.
+
+כתבו את הפונקציה הבאה:
+#### קלט:
+מטריצה $A$, כמערך
+`UArray Int Double`
+ווקטור 
+$v$
+כמערך
+`UArray Int Double`
+#### פלט:
+מכםלה
+$A \cdot v$
+כמערך
+`UArray Int Double`
+### הערה:
+בשאלה זו כדי להשתמש בפונקציות הבאות:
+
+```Haskell 
+runSTUArray :: (forall s. ST s (STUArray s i e)) -> UArray i e
+```
+```Haskell 
+newArray :: (MArray a e m, Ix i) => (i, i) -> e -> m (a i e)
+```
+```Haskell 
+writeArray :: (MArray a e m, Ix i) => a i e -> i -> e -> m ()
+```
+```Haskell 
+bounds :: (IArray a e, Ix i) => a i e -> (i, i)
+```
+```Haskell 
+(!) :: (IArray a e, Ix i) => a i e -> i -> e
+```
+```Haskell 
+forM_ :: (Foldable t, Monad m) => t a -> (a -> m b) -> m ()
+```
+```Haskell 
+forM :: (Traversable t, Monad m) => t a -> (a -> m b) -> m (t b)
+```
+___
