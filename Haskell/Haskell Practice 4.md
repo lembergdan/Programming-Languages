@@ -126,9 +126,6 @@ bounds :: (IArray a e, Ix i) => a i e -> (i, i)
 ```Haskell 
 forM_ :: (Foldable t, Monad m) => t a -> (a -> m b) -> m ()
 ```
-```Haskell 
-forM :: (Traversable t, Monad m) => t a -> (a -> m b) -> m (t b)
-```
 ___
 
 
