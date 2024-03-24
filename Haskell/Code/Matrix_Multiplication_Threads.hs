@@ -1,3 +1,5 @@
+
+
 mult :: (Int, Int) -> Int -> Int -> UArray Int Double -> UArray Int Double -> UArray Int Double 
 mult (m1, m2) k n a b = runSTUArray $ do 
     arr <- newArray (0, (m2 - m1 + 1) * n - 1) 0.0 
@@ -25,3 +27,22 @@ multMat m k n a b = listArray (0, m * n - 1) (c1 `par` c2 `par` c3 `par` c4 `seq
         c2 = elems $ mult (1 * t, 2 * t - 1) k n a b
         c3 = elems $ mult (2 * t, 3 * t - 1) k n a b
         c4 = elems $ mult (3 * t, 4 * t - 1) k n a b
+
+
+n = 1000
+
+main = do 
+    arr1 <- rand n n 
+    arr2 <- rand n n 
+
+    let !l1 = concat $ toLists arr1 
+    let !l2 = concat $ toLists arr2
+
+    let !a = listArray (0, n * n - 1) l1
+    let !b = listArray (0, n * n - 1) l2
+
+    tt1 <- getCurrentTime 
+    let mm = multMat n n n a b 
+    print $ mm ! 2     
+    tt2 <- getCurrentTime
+    print (diffUTCTime tt2 tt1)
