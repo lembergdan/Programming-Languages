@@ -1,4 +1,12 @@
-
+import Control.Monad.ST
+import Data.Array.ST 
+import Control.Monad 
+import Data.STRef
+import Data.Array.Unboxed
+import Data.Time.Clock
+import Numeric.LinearAlgebra hiding ((!))
+import Control.Parallel
+import Control.Parallel.Strategies
 
 mult :: (Int, Int) -> Int -> Int -> UArray Int Double -> UArray Int Double -> UArray Int Double 
 mult (m1, m2) k n a b = runSTUArray $ do 
